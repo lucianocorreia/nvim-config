@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/lucianocorreia/Workspace/lab/elixir/demo_app'
+let g:netrw_dirhist_3='/Users/lucianocorreia/github.com/lucianocorreia/correia_app'
+let g:netrw_dirhist_2='/Users/lucianocorreia/github.com/lucianocorreia/correia_app/lib/correia_app_web/templates/layout'
+let g:netrw_dirhist_1='/Users/lucianocorreia/github.com/lucianocorreia/correia_app/lib/correia_app_web/templates'
+let g:netrw_dirhist_0='/Users/lucianocorreia/github.com/lucianocorreia/correia_app/lib/correia_app_web'
+let g:netrw_dirhist_9='/Users/lucianocorreia/github.com/lucianocorreia/correia_app/lib/correia_app_web/live'
+let g:netrw_dirhist_8='/Users/lucianocorreia/github.com/lucianocorreia/correia_app/lib/correia_app_web'
+let g:netrw_dirhist_7='/Users/lucianocorreia/github.com/lucianocorreia/correia_app/lib'
+let g:netrw_dirhist_6='/Users/lucianocorreia/github.com/lucianocorreia/correia_app'
+let g:netrw_dirhist_5='/Users/lucianocorreia/github.com/lucianocorreia/correia_app/config'
