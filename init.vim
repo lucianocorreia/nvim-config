@@ -26,6 +26,24 @@ set encoding=utf-8
 set nobackup
 set nowritebackup
 
+" No wrapping
+set nowrap
+
+" Highlight search results when using /
+set hlsearch
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=500
+
+" all utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
+" 4 spaces indentation
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2
+
 " Enables filetype detection, loads ftplugin, and loads indent
 " (Not necessary on nvim and may not be necessary on vim 8.2+)
 filetype plugin indent on
@@ -33,7 +51,7 @@ filetype plugin indent on
 set inccommand=split
 
 set background=dark
-colorscheme onedark
+colorscheme iceberg
 "colorscheme gruvbox
 
 " commandos
@@ -41,16 +59,16 @@ let mapleader="\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
 
 nnoremap <c-p> :Files<CR>
-"nnoremap <c-f> :Ag<space>
+nnoremap <c-f> :Ag<space>
 
 " NERDTree commands
 "nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
 
 " Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 " Use <c-space> to trigger completion.
 if has('nvim')
