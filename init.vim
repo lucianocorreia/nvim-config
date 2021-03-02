@@ -58,6 +58,8 @@ set background=dark
 "colorscheme iceberg
 colorscheme gruvbox
 
+let g:coc_global_extensions=[ 'coc-json', 'coc-sql', 'coc-eslint', 'coc-html', 'coc-db', 'coc-go', 'coc-elixir', 'coc-phpls' ]
+
 " commandos
 let mapleader="\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
