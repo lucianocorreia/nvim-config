@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'cocopon/iceberg.vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -17,6 +18,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-projectionist'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 syntax enable
@@ -56,9 +58,10 @@ set inccommand=split
 
 set background=dark
 "colorscheme iceberg
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme onedark
 
-let g:coc_global_extensions=[ 'coc-json', 'coc-sql', 'coc-eslint', 'coc-html', 'coc-db', 'coc-go', 'coc-elixir', 'coc-phpls' ]
+let g:coc_global_extensions=[ 'coc-json', 'coc-sql', 'coc-eslint', 'coc-html', 'coc-db', 'coc-go', 'coc-elixir', 'coc-phpls', 'coc-emmet' ]
 
 " commandos
 let mapleader="\<space>"
@@ -82,3 +85,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,leex,eex EmmetInstall
