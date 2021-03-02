@@ -13,6 +13,10 @@ Plug 'preservim/nerdtree'
 Plug 'elixir-editors/vim-elixir'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-projectionist'
+Plug 'noahfrederick/vim-composer'
+Plug 'noahfrederick/vim-laravel'
 call plug#end()
 
 syntax enable
@@ -51,8 +55,8 @@ filetype plugin indent on
 set inccommand=split
 
 set background=dark
-colorscheme iceberg
-"colorscheme gruvbox
+"colorscheme iceberg
+colorscheme gruvbox
 
 " commandos
 let mapleader="\<space>"
