@@ -1,90 +1,100 @@
 call plug#begin()
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'cocopon/iceberg.vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
-Plug 'jiangmiao/auto-pairs'
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
-Plug 'elixir-editors/vim-elixir'
-Plug 'airblade/vim-gitgutter'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'majutsushi/tagbar'
+Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-projectionist'
-Plug 'noahfrederick/vim-composer'
-Plug 'noahfrederick/vim-laravel'
-Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
-syntax enable
+syntax on
 
-set number
-set relativenumber
-set hidden
 set mouse=a
-
-set encoding=utf-8
-set nobackup
-set nowritebackup
-
-" No wrapping
+set relativenumber
+set nohlsearch
+set hidden
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
 set nowrap
-
-" Highlight search results when using /
-set hlsearch
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=500
-
-" all utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
+set nowritebackup
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=8
+" set noshowmode
+set signcolumn=yes
+set isfname+=@-@
+" set ls=0
 
-" 4 spaces indentation
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2
+" Give more space for displaying messages.
+set cmdheight=1
 
-" Enables filetype detection, loads ftplugin, and loads indent
-" (Not necessary on nvim and may not be necessary on vim 8.2+)
-filetype plugin indent on
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=50
 
-set inccommand=split
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 
 set background=dark
-"colorscheme iceberg
-"colorscheme gruvbox
-colorscheme onedark
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker-community'
+colorscheme material
+
+let g:lightline = { 'colorscheme': 'material_vim' }
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 let g:coc_global_extensions=[ 'coc-json', 'coc-sql', 'coc-eslint', 'coc-html', 'coc-db', 'coc-go', 'coc-elixir', 'coc-phpls', 'coc-emmet' ]
 
-" commandos
 let mapleader="\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
 
-nnoremap <c-p> :Files<CR>
-nnoremap <c-f> :Ag<space>
+" Find files using Telescope command-line sugar.
 
-" NERDTree commands
-"nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-"nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <C-p> :lua require('telescope.builtin').grep_string({search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Start NERDTree and leave the cursor in it.
-"autocmd VimEnter * NERDTree
+nnoremap <space>e :CocCommand explorer<CR>
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+" Use U to show documentation in preview window
+nnoremap <silent> U :call <SID>show_documentation()<CR>
 
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,leex,eex EmmetInstall
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <F8> :TagbarToggle<CR>

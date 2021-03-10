@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/lucianocorreia/.config/nvim'
+let g:netrw_dirhist_6='/Users/lucianocorreia/.config'
+let g:netrw_dirhist_5='/Users/lucianocorreia/.config/nvim'
 let g:netrw_dirhist_4='/Users/lucianocorreia/Workspace/lab/elixir/demo_app'
 let g:netrw_dirhist_3='/Users/lucianocorreia/Workspace/lab/elixir/demo_app/config'
 let g:netrw_dirhist_2='/Users/lucianocorreia/Workspace/lab/elixir/demo_app'
