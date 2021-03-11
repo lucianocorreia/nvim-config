@@ -1,6 +1,9 @@
 call plug#begin()
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -70,11 +73,11 @@ endif
 
 set background=dark
 let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker'
+let g:material_theme_style = 'darker-community'
 colorscheme material
 
 let g:lightline = {
-      \ 'colorscheme': 'material_vim',
+      \ 'colorscheme': 'material',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -83,6 +86,12 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+" Fix italics in Vim
+if !has('nvim')
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
+endif
 
 let g:coc_global_extensions=[ 'coc-json', 'coc-sql', 'coc-eslint', 'coc-html', 'coc-db', 'coc-go', 'coc-elixir', 'coc-phpls', 'coc-emmet' ]
 
