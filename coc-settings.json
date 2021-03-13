@@ -1,5 +1,5 @@
 {
-    "coc.preferences.formatOnType":true,
+    "coc.preferences.formatOnType": true,
     "coc.preferences.formatOnTypeFiletypes":["go"],
     "diagnostic.errorSign": "✘",
     "diagnostic.infoSign": "ℹ",
@@ -8,13 +8,13 @@
     "codeLens.enable": true,
     "signature.enable": true,
 
-
     "html.enable":true,
     "html.validate.scripts": true,
     "html.format.enable":true,
 
     "coc.preferences.colorSupport": true,
-    "signature.target": "echo",
-    "coc.preferences.hoverTarget": "echo"
-
+    "suggest.floatEnable": true,
+    "diagnostic.messageTarget": "float",
+    "signature.target": "float",
+    "coc.preferences.hoverTarget": "float"
 }
