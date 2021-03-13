@@ -13,5 +13,8 @@
     "html.validate.scripts": true,
     "html.format.enable":true,
 
-    "coc.preferences.colorSupport": true
+    "coc.preferences.colorSupport": true,
+    "signature.target": "echo",
+    "coc.preferences.hoverTarget": "echo"
+
 }

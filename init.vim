@@ -8,7 +8,6 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'majutsushi/tagbar'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovim/nvim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -22,6 +21,7 @@ call plug#end()
 syntax on
 
 set guifont="Fira Code"
+set keymap=accents 
 set mouse=a
 set relativenumber
 set nohlsearch
@@ -110,7 +110,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap <C-b> :CocCommand explorer<CR>
 
-nnoremap <C-t> :terminal<CR>
 " Use ESC to exit insert mode in :term
 :tnoremap <Esc> <C-\><C-n>
 
@@ -126,4 +125,3 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nmap <F8> :TagbarToggle<CR>
