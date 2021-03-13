@@ -108,7 +108,11 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-nnoremap <space>e :CocCommand explorer<CR>
+nnoremap <C-b> :CocCommand explorer<CR>
+
+nnoremap <C-t> :terminal<CR>
+" Use ESC to exit insert mode in :term
+:tnoremap <Esc> <C-\><C-n>
 
 " Use U to show documentation in preview window
 nnoremap <silent> U :call <SID>show_documentation()<CR>
