@@ -42,7 +42,6 @@ set nobackup
 set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
-set termguicolors
 set scrolloff=8
 " set noshowmode
 set signcolumn=yes
@@ -74,7 +73,7 @@ endif
 set background=dark
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'darker-community'
-colorscheme material
+colorscheme material 
 
 let g:lightline = {
       \ 'colorscheme': 'material',
@@ -124,4 +123,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
+
+autocmd VimEnter * call timer_start(200, { tid -> execute(':CocCommand explorer')})
+
 
