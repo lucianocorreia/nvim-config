@@ -3,6 +3,7 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
+Plug 'ayu-theme/ayu-vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -73,6 +74,7 @@ endif
 set background=dark
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'darker-community'
+let ayucolor="mirage"
 colorscheme material 
 
 let g:lightline = {
@@ -95,6 +97,13 @@ endif
 let g:coc_global_extensions=[ 'coc-json', 'coc-sql', 'coc-eslint', 'coc-html', 'coc-db', 'coc-go', 'coc-elixir', 'coc-phpls', 'coc-emmet' ]
 
 let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
 
 let mapleader="\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
