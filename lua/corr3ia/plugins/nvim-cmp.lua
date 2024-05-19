@@ -131,5 +131,12 @@ return {
                 },
             },
         })
+
+        cmp.setup.filetype({ "sql" }, {
+            sources = {
+                { name = "vim-deadbod-completion" },
+                { name = "buffer" },
+            },
+        })
     end,
 }
