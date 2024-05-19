@@ -3,8 +3,8 @@ vim.g.maplocalleader = ' '
 
 local keymap = vim.keymap
 
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-keymap.set("i", "kjw", "<ESC>:w<CR>", { desc = "Exit insert mode with jk" })
+keymap.set("i", "kj", "<ESC>", { desc = "Exit insert mode with jk" })
+-- keymap.set("i", "kj", "<ESC>:w<CR>", { desc = "Exit insert mode with kj" })
 
 -- Movement
 keymap.set("n", "<C-L>", "<C-W><C-L>", { desc = "Move to the [L]eft window" })
