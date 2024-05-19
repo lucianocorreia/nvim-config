@@ -53,7 +53,14 @@ return {
                 sorting_strategy = "ascending",
             },
             pickers = {
-                find_files = { hidden = true },
+                find_files = {
+                    hidden = true,
+                    previewer = false,
+                    layout_config = {
+                        height = 0.7,
+                        width = 0.6,
+                    },
+                },
                 diagnostics = {
                     bufrn = 0,
                     previewer = false,
