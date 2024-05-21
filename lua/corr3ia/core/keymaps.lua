@@ -52,3 +52,5 @@ keymap.set("n", "<leader>ger", "<Cmd>GoIfErr<CR>", { desc = "Go [E]rr [R]eport",
 keymap.set("v", "<C-f>", ":fold<CR>", { desc = "Fold", silent = true })
 keymap.set("n", "<C-f>", "<Cmd>foldopen<CR>", { desc = "Fold [O]pen", silent = true })
 
+-- buffers
+keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "Delete current buffer", silent = true })
