@@ -60,3 +60,4 @@ for option, value in pairs(options) do
     vim.opt[option] = value
 end
 
+vim.cmd("language en_US")

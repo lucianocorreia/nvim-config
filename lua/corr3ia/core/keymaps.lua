@@ -35,7 +35,7 @@ keymap.set("n", "<leader>hh", ":nohl<CR>", { desc = "Clear [H]ighlight", silent 
 
 -- misc
 keymap.set("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>", { desc = "Replace [P]attern" })
-keymap.set("n", "<C-s>", "<Cmd>w<CR>", { desc = "Save [W]rite" })
+keymap.set("n", "<leader>ww", "<Cmd>w<CR>", { desc = "Save [W]rite" })
 
 
 -- Go run commands
