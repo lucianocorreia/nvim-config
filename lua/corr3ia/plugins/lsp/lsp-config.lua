@@ -291,6 +291,52 @@ return {
                     capabilities = capabilities,
                 })
             end,
+            ["vuels"] = function()
+                -- configure bash language server
+                lspconfig["vuels"].setup({
+                    capabilities = capabilities,
+                    config = {
+                        css = {},
+                        emmet = {},
+                        html = {
+                            suggest = {}
+                        },
+                        javascript = {
+                            format = {
+                                enable = true,
+                                options = {
+                                }
+                            }
+                        },
+                        stylusSupremacy = {},
+                        typescript = {
+                            format = {}
+                        },
+                        vetur = {
+                            completion = {
+                                autoImport = false,
+                                tagCasing = "kebab",
+                                useScaffoldSnippets = false
+                            },
+                            format = {
+                                defaultFormatter = {
+                                    js = "prettier",
+                                    ts = "prettier",
+                                },
+                                defaultFormatterOptions = {},
+                                scriptInitialIndent = false,
+                                styleInitialIndent = false
+                            },
+                            useWorkspaceDependencies = false,
+                            validation = {
+                                script = true,
+                                style = true,
+                                template = true
+                            }
+                        }
+                    }
+                })
+            end,
         })
     end,
 }
